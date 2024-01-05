@@ -1,11 +1,10 @@
-import { Outlet } from "react-router-dom";
-import Navbar from "../components/navbar/Navbar";
+
+import Hero from "../components/hero/Hero";
 
 const Home = () => {
   return (
     <div>
-      <Navbar />
-      <Outlet />
+      <Hero/>
     </div>
   );
 };

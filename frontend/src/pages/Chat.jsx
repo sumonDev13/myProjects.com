@@ -1,6 +1,28 @@
-
+import { useState } from 'react';
 
 const Chat = () => {
+  const [messages, setMessages] = useState([
+    { id: 1, text: 'Hi there!', sender: 'John Doe', time: '10:00 AM' },
+    { id: 2, text: 'Hey! How are you?', sender: 'Jane Smith', time: '10:05 AM' },
+    // Add more messages as needed
+  ]);
+
+  const [inputText, setInputText] = useState('');
+
+  const sendMessage = () => {
+    if (inputText.trim() === '') return;
+
+    const newMessage = {
+      id: messages.length + 1,
+      text: inputText,
+      sender: 'John Doe', // Assuming the user sending the message is 'John Doe'
+      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+    };
+
+    setMessages([...messages, newMessage]);
+    setInputText('');
+  };
+
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
@@ -36,13 +58,23 @@ const Chat = () => {
           {/* Messages */}
           <div className="overflow-y-auto max-h-72">
             {/* Individual Messages */}
-            <div className="flex flex-col mb-2">
-              <span className="bg-blue-500 text-white rounded-lg py-1 px-3 max-w-xs">
-                Hi there!
-              </span>
-              <span className="text-xs text-gray-500 self-end">10:00 AM</span>
-            </div>
-            {/* Add more messages */}
+            {messages.map((message) => (
+              <div
+                key={message.id}
+                className={`flex flex-col mb-2 ${
+                  message.sender === 'John Doe' ? 'self-end items-end' : 'items-start'
+                }`}
+              >
+                <span
+                  className={`${
+                    message.sender === 'John Doe' ? 'bg-blue-500 text-white' : 'bg-gray-200'
+                  } rounded-lg py-1 px-3 max-w-xs`}
+                >
+                  {message.text}
+                </span>
+                <span className="text-xs text-gray-500">{message.time}</span>
+              </div>
+            ))}
           </div>
 
           {/* Message input */}
@@ -51,8 +83,13 @@ const Chat = () => {
               type="text"
               placeholder="Type a message..."
               className="border rounded-full py-2 px-4 w-full"
+              value={inputText}
+              onChange={(e) => setInputText(e.target.value)}
             />
-            <button className="ml-2 bg-blue-500 text-white rounded-full py-2 px-4">
+            <button
+              onClick={sendMessage}
+              className="ml-2 bg-blue-500 text-white rounded-full py-2 px-4"
+            >
               Send
             </button>
           </div>
