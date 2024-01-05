@@ -1,12 +1,13 @@
-import Home from "../pages/Home"
-
+import Home from "../pages/Home";
 
 const Layout = () => {
   return (
     <div>
-        <Home/>
+      <div>
+        <Home />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

@@ -1,21 +1,15 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Layout from "./layout/Layout";
-import Home from "./pages/Home";
+import Chat from "./pages/Chat";
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: Layout,
-    children: [
-      {
-        path: "/",
-        Component: Home,
-      },
-      {
-        path: "/chat",
-        Component: Home,
-      },
-    ],
+  },
+  {
+    path: "/chat",
+    Component: Chat,
   },
 ]);
 
