@@ -1,18 +1,10 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import Navbar from "../components/navbar/Navbar";
 
 const Home = () => {
   return (
     <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/chat">Chat</Link>
-          </li>
-        </ul>
-      </nav>
+      <Navbar />
       <Outlet />
     </div>
   );
