@@ -7,15 +7,8 @@ import { useEffect } from "react";
 export default function RedoAnimText( ) {
   const textIndex = useMotionValue(0);
   const texts = [
-    "I am a Full-Stack Web Developer",
-    "I am a passionate ReactJS Developer",
-    "I am a passionate NodeJS Developer",
-    "Knock knock! Who's there? Your new employee!",
-    "Walking the tightrope balance of project management...",
-    "I find myself compelled to express my interest due to...",
-    "My pen (or should I say, keyboard) is at work today because...",
-    "Inspired by the alluring challenge in the job posting, I am writing...",
-    "Stirred to my keyboard by the tantalizing nature of the role…"
+    ", My name is Sumon Mondal",
+    ", I am a Full-Stack Web Developer",
   ];
 
   const baseText = useTransform(textIndex, (latest) => texts[latest] || "");
