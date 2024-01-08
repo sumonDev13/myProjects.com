@@ -37,7 +37,7 @@ const itemVariants = {
 
 export default function DocAnimation() {
   return (
-    <div className="bg-slate-900 h-screen flex">
+    <div className="h-screen flex fixed top-0">
       <motion.div className="flex w-full select-none items-center justify-start ml-5">
         <motion.div
           variants={containerVariants}
