@@ -1,6 +1,7 @@
 import DocAnimation from "../animation/DocAnimation"
 import vdo from '../../assets/images/vdo.mp4'
 
+
 const Hero = () => {
   return (
     <div className="relative">

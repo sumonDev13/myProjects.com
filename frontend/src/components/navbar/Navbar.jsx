@@ -9,7 +9,7 @@ const Navbar = () => {
         <h1 className="text-white text-2xl">SumonDev13</h1>
         </Link>
         
-        <div className="ml-auto">
+        <div className="ml-auto z-10">
           <MenuDropdown />
         </div>
       </div>
