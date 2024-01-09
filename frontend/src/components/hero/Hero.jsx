@@ -1,5 +1,5 @@
 import DocAnimation from "../animation/DocAnimation"
-import vdo from '../../assets/images/vdo.mp4'
+import vdo from '../../assets/images/code.mp4'
 
 
 const Hero = () => {
