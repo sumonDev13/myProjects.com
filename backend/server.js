@@ -13,6 +13,10 @@ app.use(cookieParser());
 app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({extended: true}));
 
+app.get('/', (req, res) =>{
+    res.json('Backend successfully running');
+});
+
 app.listen(port,()=>{
     console.log(`app listening on ${port}`);
 })
