@@ -17,7 +17,7 @@ app.use('/', (req, res) =>{
     res.json({message:'Backend successfully running api'});
 });
 
-app.use('/name', (req, res) =>{
+app.get('/name', (req, res) =>{
     res.json({message:'my name is sumon'});
 });
 
